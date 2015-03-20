@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  PZPullToRefresh
+//  PZPullToRefresh-Sample
 //
-//  Created by pixyzehn on 3/19/15.
+//  Created by pixyzehn on 3/21/15.
 //  Copyright (c) 2015 pixyzehn. All rights reserved.
 //
 

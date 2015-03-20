@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:PZPullToRefresh.xcodeproj">
+      location = "self:PZPullToRefresh-Sample.xcodeproj">
    </FileRef>
 </Workspace>

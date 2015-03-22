@@ -8,21 +8,21 @@
 
 import UIKit
 
-@objc protocol PZPullToRefreshDelegate: NSObjectProtocol {
+@objc public protocol PZPullToRefreshDelegate: NSObjectProtocol {
     func pullToRefreshDidTrigger(view: PZPullToRefreshView) -> ()
     func pullToRefreshIsLoading(view: PZPullToRefreshView) -> Bool
     optional func pullToRefreshLastUpdated(view: PZPullToRefreshView) -> NSDate
 }
 
-class PZPullToRefreshView: UIView {
+public class PZPullToRefreshView: UIView {
     
-    enum RefreshState {
+    public enum RefreshState {
         case Normal
         case Pulling
         case Loading
     }
     
-    struct Options {
+    public struct Options {
         static let textColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1)
         static let bgColor = UIColor(red:0, green:0.22, blue:0.35, alpha:1)
         static let flipAnimatioDutation: CFTimeInterval = 0.18
@@ -30,10 +30,10 @@ class PZPullToRefreshView: UIView {
         static let lastUpdatedKey = "RefreshLastUpdated"
     }
     
-    var isShowUpdatedTime: Bool = true
+    public var isShowUpdatedTime: Bool = true
     
-    var _state: RefreshState = .Normal
-    var state: RefreshState {
+    private var _state: RefreshState = .Normal
+    public var state: RefreshState {
         get {
            return _state
         }
@@ -66,13 +66,13 @@ class PZPullToRefreshView: UIView {
         }
     }
     
-    var lastUpdatedLabel: UILabel?
-    var statusLabel: UILabel?
-    var arrowImage: CALayer?
-    var activityView: UIActivityIndicatorView?
-    var delegate: AnyObject?
+    public var lastUpdatedLabel: UILabel?
+    public var statusLabel: UILabel?
+    public var arrowImage: CALayer?
+    public var activityView: UIActivityIndicatorView?
+    public var delegate: AnyObject?
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         self.backgroundColor = Options.bgColor
@@ -115,11 +115,11 @@ class PZPullToRefreshView: UIView {
         state = .Normal
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func refreshLastUpdatedDate() {
+    public func refreshLastUpdatedDate() {
         if isShowUpdatedTime {
             if let update = delegate?.respondsToSelector("pullToRefreshLastUpdated:") {
                 var date = delegate?.pullToRefreshLastUpdated!(self)
@@ -136,7 +136,7 @@ class PZPullToRefreshView: UIView {
     
     // MARK:ScrollView Methods
     
-    func refreshScrollViewDidScroll(scrollView: UIScrollView) {
+    public func refreshScrollViewDidScroll(scrollView: UIScrollView) {
         
         println(scrollView.contentOffset.y)
         
@@ -157,7 +157,7 @@ class PZPullToRefreshView: UIView {
         }
     }
     
-    func refreshScrollViewDidEndDragging(scrollView: UIScrollView) {
+    public func refreshScrollViewDidEndDragging(scrollView: UIScrollView) {
         var loading: Bool = false
         if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
             loading = delegate!.pullToRefreshIsLoading(self)
@@ -176,7 +176,7 @@ class PZPullToRefreshView: UIView {
         }
     }
     
-    func refreshScrollViewDataSourceDidFinishedLoading(scrollView: UIScrollView) {
+    public func refreshScrollViewDataSourceDidFinishedLoading(scrollView: UIScrollView) {
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.4)
         scrollView.contentInset = UIEdgeInsetsMake(64.0, 0.0, 0.0, 0.0)

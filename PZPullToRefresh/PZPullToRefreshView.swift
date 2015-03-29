@@ -22,13 +22,11 @@ public class PZPullToRefreshView: UIView {
         case Loading
     }
     
-    public struct Options {
-        static let textColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1)
-        static let bgColor = UIColor(red:0, green:0.22, blue:0.35, alpha:1)
-        static let flipAnimatioDutation: CFTimeInterval = 0.18
-        static let thresholdValue: CGFloat = 120.0
-        static let lastUpdatedKey = "RefreshLastUpdated"
-    }
+    public var textColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1)
+    public var bgColor = UIColor(red:0, green:0.22, blue:0.35, alpha:1)
+    public var flipAnimatioDutation: CFTimeInterval = 0.18
+    public var thresholdValue: CGFloat = 120.0
+    public var lastUpdatedKey = "RefreshLastUpdated"
     
     public var isShowUpdatedTime: Bool = true
     
@@ -42,7 +40,7 @@ public class PZPullToRefreshView: UIView {
             case .Pulling:
                 statusLabel?.text = "Release to refresh..."
                 CATransaction.begin()
-                CATransaction.setAnimationDuration(Options.flipAnimatioDutation)
+                CATransaction.setAnimationDuration(flipAnimatioDutation)
                 arrowImage?.transform = CATransform3DMakeRotation(CGFloat(M_PI), 0.0, 0.0, 1.0)
                 CATransaction.commit()
             case .Normal:
@@ -75,16 +73,16 @@ public class PZPullToRefreshView: UIView {
     override public init(frame: CGRect) {
         super.init(frame: frame)
         self.autoresizingMask = UIViewAutoresizing.FlexibleWidth
-        self.backgroundColor = Options.bgColor
+        self.backgroundColor = bgColor
 
         let label: UILabel = UILabel(frame: CGRectMake(0, frame.size.height - 30.0, self.frame.size.width, 20.0))
         label.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         label.font = UIFont.systemFontOfSize(12.0)
-        label.textColor = Options.textColor
+        label.textColor = textColor
         label.backgroundColor = UIColor.clearColor()
         label.textAlignment = .Center
         lastUpdatedLabel = label
-        if let value: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(Options.lastUpdatedKey) {
+        if let value: AnyObject = NSUserDefaults.standardUserDefaults().objectForKey(lastUpdatedKey) {
             lastUpdatedLabel?.text = value as? String
         } else {
             lastUpdatedLabel?.text = nil
@@ -94,7 +92,7 @@ public class PZPullToRefreshView: UIView {
         let label2: UILabel = UILabel(frame: CGRectMake(0, frame.size.height - 48.0, self.frame.size.width, 20.0))
         label2.autoresizingMask = UIViewAutoresizing.FlexibleWidth
         label2.font = UIFont.systemFontOfSize(13.0)
-        label2.textColor = Options.textColor
+        label2.textColor = textColor
         label2.backgroundColor = UIColor.clearColor()
         label2.textAlignment = .Center
         statusLabel = label2
@@ -128,7 +126,7 @@ public class PZPullToRefreshView: UIView {
                 formatter.PMSymbol = "PM"
                 formatter.dateFormat = "yyyy/MM/dd/ hh:mm:a"
                 lastUpdatedLabel?.text = "Last Updated: \(formatter.stringFromDate(date!))"
-                NSUserDefaults.standardUserDefaults().setObject(lastUpdatedLabel?.text, forKey: Options.lastUpdatedKey)
+                NSUserDefaults.standardUserDefaults().setObject(lastUpdatedLabel?.text, forKey: lastUpdatedKey)
                 NSUserDefaults.standardUserDefaults().synchronize()
             }
         }
@@ -142,16 +140,16 @@ public class PZPullToRefreshView: UIView {
         
         if state == .Loading {
             var offset = max(scrollView.contentOffset.y * -1, 0)
-            offset = min(offset, Options.thresholdValue)
+            offset = min(offset, thresholdValue)
             scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
         } else if scrollView.dragging {
             var loading: Bool = false
             if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
                 loading = delegate!.pullToRefreshIsLoading(self)
             }
-            if state == .Pulling && scrollView.contentOffset.y > -Options.thresholdValue && scrollView.contentOffset.y < 0.0 && !loading {
+            if state == .Pulling && scrollView.contentOffset.y > -thresholdValue && scrollView.contentOffset.y < 0.0 && !loading {
                 state = .Normal
-            } else if state == .Normal && scrollView.contentOffset.y < -Options.thresholdValue && !loading {
+            } else if state == .Normal && scrollView.contentOffset.y < -thresholdValue && !loading {
                 state = .Pulling
             }
         }
@@ -163,14 +161,14 @@ public class PZPullToRefreshView: UIView {
             loading = delegate!.pullToRefreshIsLoading(self)
         }
 
-        if (scrollView.contentOffset.y <= -Options.thresholdValue && !loading) {
+        if (scrollView.contentOffset.y <= -thresholdValue && !loading) {
             if let load = delegate?.respondsToSelector("pullToRefreshDidTrigger:") {
                 delegate?.pullToRefreshDidTrigger(self)
             }
             state = .Loading
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationDuration(0.4)
-            scrollView.contentInset = UIEdgeInsetsMake(Options.thresholdValue, 0.0, 0.0, 0.0)
+            scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
             scrollView.setContentOffset(scrollView.contentOffset, animated: true)
             UIView.commitAnimations()
         }

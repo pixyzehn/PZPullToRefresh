@@ -25,6 +25,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.edgesForExtendedLayout = UIRectEdge.None
+        
         if refreshHeaderView == nil {
             var view = PZPullToRefreshView(frame: CGRectMake(0, 0 - tableView.bounds.size.height, tableView.bounds.size.width, tableView.bounds.size.height))
             view.delegate = self

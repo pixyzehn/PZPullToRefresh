@@ -25,7 +25,7 @@ public class PZPullToRefreshView: UIView {
     public var textColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1)
     public var bgColor = UIColor(red:0, green:0.22, blue:0.35, alpha:1)
     public var flipAnimatioDutation: CFTimeInterval = 0.18
-    public var thresholdValue: CGFloat = 120.0
+    public var thresholdValue: CGFloat = 60.0
     public var lastUpdatedKey = "RefreshLastUpdated"
     
     public var isShowUpdatedTime: Bool = true
@@ -136,8 +136,6 @@ public class PZPullToRefreshView: UIView {
     
     public func refreshScrollViewDidScroll(scrollView: UIScrollView) {
         
-        println(scrollView.contentOffset.y)
-        
         if state == .Loading {
             var offset = max(scrollView.contentOffset.y * -1, 0)
             offset = min(offset, thresholdValue)
@@ -177,7 +175,7 @@ public class PZPullToRefreshView: UIView {
     public func refreshScrollViewDataSourceDidFinishedLoading(scrollView: UIScrollView) {
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(0.4)
-        scrollView.contentInset = UIEdgeInsetsMake(64.0, 0.0, 0.0, 0.0)
+        scrollView.contentInset = UIEdgeInsetsZero
         UIView.commitAnimations()
         
         state = .Normal

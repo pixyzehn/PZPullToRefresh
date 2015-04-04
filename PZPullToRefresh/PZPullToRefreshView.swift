@@ -164,11 +164,6 @@ public class PZPullToRefreshView: UIView {
                 delegate?.pullToRefreshDidTrigger(self)
             }
             state = .Loading
-            UIView.beginAnimations(nil, context: nil)
-            UIView.setAnimationDuration(0.4)
-            scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
-            scrollView.setContentOffset(scrollView.contentOffset, animated: true)
-            UIView.commitAnimations()
         }
     }
     

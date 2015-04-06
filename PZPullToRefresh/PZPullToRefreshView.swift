@@ -136,11 +136,14 @@ public class PZPullToRefreshView: UIView {
     
     public func refreshScrollViewDidScroll(scrollView: UIScrollView) {
         
-        if state == .Loading {
+        if state == .Loading && loadingFlag == false {
+            
             var offset = max(scrollView.contentOffset.y * -1, 0)
             offset = min(offset, thresholdValue)
             scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
+            
         } else if scrollView.dragging {
+            
             var loading: Bool = false
             if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
                 loading = delegate!.pullToRefreshIsLoading(self)
@@ -154,6 +157,7 @@ public class PZPullToRefreshView: UIView {
     }
     
     public func refreshScrollViewDidEndDragging(scrollView: UIScrollView) {
+        
         var loading: Bool = false
         if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
             loading = delegate!.pullToRefreshIsLoading(self)
@@ -164,11 +168,12 @@ public class PZPullToRefreshView: UIView {
                 delegate?.pullToRefreshDidTrigger(self)
             }
             state = .Loading
-            UIView.beginAnimations(nil, context: nil)
-            UIView.setAnimationDuration(0.4)
-            scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
-            scrollView.setContentOffset(scrollView.contentOffset, animated: true)
-            UIView.commitAnimations()
+//            UIView.beginAnimations(nil, context: nil)
+//            UIView.setAnimationDuration(0.4)
+//            //scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
+//            scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+//            scrollView.setContentOffset(scrollView.contentOffset, animated: true)
+//            UIView.commitAnimations()
         }
     }
     

@@ -15,7 +15,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     var refreshHeaderView: PZPullToRefreshView?
-    var reloading: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +49,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func reloadTableViewDataSource() {
-        reloading = true
+        refreshHeaderView?.isLoading = true
     }
     
     func doneLoadingTableViewData() {
-        reloading = false
+        refreshHeaderView?.isLoading = false
         refreshHeaderView?.refreshScrollViewDataSourceDidFinishedLoading(self.tableView)
     }
     
@@ -73,18 +72,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func pullToRefreshDidTrigger(view: PZPullToRefreshView) -> () {
         reloadTableViewDataSource()
         
-        let delay = 3.0 * Double(NSEC_PER_SEC)
+        let delay = 2.0 * Double(NSEC_PER_SEC)
         let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue(), {
             println("Complete loading!")
             self.doneLoadingTableViewData()
         })
     }
-    
-    func pullToRefreshIsLoading(view: PZPullToRefreshView) -> Bool {
-        return reloading
-    }
-    
+
     // This is a optional method.
     
     func pullToRefreshLastUpdated(view: PZPullToRefreshView) -> NSDate {

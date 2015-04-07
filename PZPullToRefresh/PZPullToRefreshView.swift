@@ -10,7 +10,6 @@ import UIKit
 
 @objc public protocol PZPullToRefreshDelegate: NSObjectProtocol {
     func pullToRefreshDidTrigger(view: PZPullToRefreshView) -> ()
-    func pullToRefreshIsLoading(view: PZPullToRefreshView) -> Bool
     optional func pullToRefreshLastUpdated(view: PZPullToRefreshView) -> NSDate
 }
 
@@ -29,6 +28,20 @@ public class PZPullToRefreshView: UIView {
     public var lastUpdatedKey = "RefreshLastUpdated"
     
     public var isShowUpdatedTime: Bool = true
+    
+    public var _isLoading: Bool = false
+    public var isLoading: Bool {
+        get {
+            return _isLoading
+        }
+        set {
+            if state == .Loading {
+                _isLoading = true
+            } else {
+                _isLoading = false
+            }
+        }
+    }
     
     private var _state: RefreshState = .Normal
     public var state: RefreshState {
@@ -136,18 +149,15 @@ public class PZPullToRefreshView: UIView {
     
     public func refreshScrollViewDidScroll(scrollView: UIScrollView) {
         
-        if state == .Loading && loadingFlag == false {
+        if state == .Loading {
             
-            var offset = max(scrollView.contentOffset.y * -1, 0)
-            offset = min(offset, thresholdValue)
-            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
+//            var offset = max(scrollView.contentOffset.y * -1, 0)
+//            offset = min(offset, thresholdValue)
+//            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
             
         } else if scrollView.dragging {
             
             var loading: Bool = false
-            if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
-                loading = delegate!.pullToRefreshIsLoading(self)
-            }
             if state == .Pulling && scrollView.contentOffset.y > -thresholdValue && scrollView.contentOffset.y < 0.0 && !loading {
                 state = .Normal
             } else if state == .Normal && scrollView.contentOffset.y < -thresholdValue && !loading {
@@ -159,21 +169,30 @@ public class PZPullToRefreshView: UIView {
     public func refreshScrollViewDidEndDragging(scrollView: UIScrollView) {
         
         var loading: Bool = false
-        if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
-            loading = delegate!.pullToRefreshIsLoading(self)
-        }
+//        if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
+//            loading = delegate!.pullToRefreshIsLoading(self)
+//        }
 
         if (scrollView.contentOffset.y <= -thresholdValue && !loading) {
             if let load = delegate?.respondsToSelector("pullToRefreshDidTrigger:") {
                 delegate?.pullToRefreshDidTrigger(self)
             }
             state = .Loading
-//            UIView.beginAnimations(nil, context: nil)
-//            UIView.setAnimationDuration(0.4)
-//            //scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
-//            scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
-//            scrollView.setContentOffset(scrollView.contentOffset, animated: true)
-//            UIView.commitAnimations()
+//            var offset = max(scrollView.contentOffset.y * -1, 0)
+//            offset = min(offset, thresholdValue)
+//            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
+
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationDuration(0.4)
+            //scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
+            //scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0.0, 0.0, 0.0)
+            
+//            var offset = max(scrollView.contentOffset.y * -1, 0)
+//            offset = min(offset, thresholdValue)
+//            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
+            scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
+            
+            UIView.commitAnimations()
         }
     }
     

@@ -178,6 +178,8 @@ public class PZPullToRefreshView: UIView {
                 delegate?.pullToRefreshDidTrigger(self)
             }
             state = .Loading
+<<<<<<< HEAD
+=======
 //            var offset = max(scrollView.contentOffset.y * -1, 0)
 //            offset = min(offset, thresholdValue)
 //            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
@@ -193,6 +195,8 @@ public class PZPullToRefreshView: UIView {
             scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
             
             UIView.commitAnimations()
+>>>>>>> 626b005c32dd6c5149272e04daec68b0b11e792c
+        }
     }
     
     public func refreshScrollViewDataSourceDidFinishedLoading(scrollView: UIScrollView) {

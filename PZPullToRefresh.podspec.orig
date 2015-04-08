@@ -1,0 +1,17 @@
+Pod::Spec.new do |s|
+  s.name = "PZPullToRefresh"
+<<<<<<< HEAD
+  s.version = "0.0.5"
+=======
+  s.version = "0.0.4"
+>>>>>>> 626b005c32dd6c5149272e04daec68b0b11e792c
+  s.summary = "This is the simplest refresh control in Swift."
+  s.homepage = 'https://github.com/pixyzehn/PZPullToRefresh'
+  s.license = { :type => 'MIT', :file => 'LICENSE' }
+  s.author = { "pixyzehn" => "civokjots0109@gmail.com" }
+
+  s.requires_arc = true
+  s.ios.deployment_target = "8.0"
+  s.source = { :git => "https://github.com/pixyzehn/PZPullToRefresh.git", :tag => "#{s.version}" }
+  s.source_files = "PZPullToRefresh/*.swift"
+end

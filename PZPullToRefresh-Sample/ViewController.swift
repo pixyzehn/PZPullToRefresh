@@ -48,15 +48,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func reloadTableViewDataSource() {
-        refreshHeaderView?.isLoading = true
-    }
-    
-    func doneLoadingTableViewData() {
-        refreshHeaderView?.isLoading = false
-        refreshHeaderView?.refreshScrollViewDataSourceDidFinishedLoading(self.tableView)
-    }
-    
     // MARK:UIScrollViewDelegate
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -68,15 +59,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // MARK:PZPullToRefreshDelegate
-    
+
     func pullToRefreshDidTrigger(view: PZPullToRefreshView) -> () {
-        reloadTableViewDataSource()
+        refreshHeaderView?.isLoading = true
         
-        let delay = 2.0 * Double(NSEC_PER_SEC)
+        let delay = 3.0 * Double(NSEC_PER_SEC)
         let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue(), {
             println("Complete loading!")
-            self.doneLoadingTableViewData()
+            self.refreshHeaderView?.isLoading = false
+            self.refreshHeaderView?.refreshScrollViewDataSourceDidFinishedLoading(self.tableView)
         })
     }
 

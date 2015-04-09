@@ -20,7 +20,7 @@ public class PZPullToRefreshView: UIView {
         case Pulling
         case Loading
     }
-    
+
     public var textColor = UIColor(red:0.95, green:0.95, blue:0.95, alpha:1)
     public var bgColor = UIColor(red:0, green:0.22, blue:0.35, alpha:1)
     public var flipAnimatioDutation: CFTimeInterval = 0.18
@@ -150,13 +150,15 @@ public class PZPullToRefreshView: UIView {
     public func refreshScrollViewDidScroll(scrollView: UIScrollView) {
         
         if state == .Loading {
-            
-//            var offset = max(scrollView.contentOffset.y * -1, 0)
-//            offset = min(offset, thresholdValue)
-//            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
+
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationDuration(0.2)
+            var offset = max(scrollView.contentOffset.y * -1, 0)
+            offset = min(offset, thresholdValue)
+            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
+            UIView.commitAnimations()
             
         } else if scrollView.dragging {
-            
             var loading: Bool = false
             if state == .Pulling && scrollView.contentOffset.y > -thresholdValue && scrollView.contentOffset.y < 0.0 && !loading {
                 state = .Normal
@@ -169,30 +171,14 @@ public class PZPullToRefreshView: UIView {
     public func refreshScrollViewDidEndDragging(scrollView: UIScrollView) {
         
         var loading: Bool = false
-//        if let load = delegate?.respondsToSelector("pullToRefreshIsLoading:") {
-//            loading = delegate!.pullToRefreshIsLoading(self)
-//        }
-
+        
         if (scrollView.contentOffset.y <= -thresholdValue && !loading) {
+            state = .Loading
+
             if let load = delegate?.respondsToSelector("pullToRefreshDidTrigger:") {
                 delegate?.pullToRefreshDidTrigger(self)
             }
-            state = .Loading
-//            var offset = max(scrollView.contentOffset.y * -1, 0)
-//            offset = min(offset, thresholdValue)
-//            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
-
-            UIView.beginAnimations(nil, context: nil)
-            UIView.setAnimationDuration(0.4)
-            //scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 0.0, 0.0)
-            //scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0.0, 0.0, 0.0)
-            
-//            var offset = max(scrollView.contentOffset.y * -1, 0)
-//            offset = min(offset, thresholdValue)
-//            scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
-            scrollView.contentInset = UIEdgeInsetsMake(thresholdValue, 0.0, 0.0, 0.0)
-            
-            UIView.commitAnimations()
+        }
     }
     
     public func refreshScrollViewDataSourceDidFinishedLoading(scrollView: UIScrollView) {

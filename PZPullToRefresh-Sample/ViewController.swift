@@ -72,7 +72,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
 
-    // This is a optional method.
+    // Optional method
     
     func pullToRefreshLastUpdated(view: PZPullToRefreshView) -> NSDate {
         return NSDate()

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E4325E11AF888180004A547 /* PZPullToRefresh.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E4325E01AF888180004A547 /* PZPullToRefresh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E4325E71AF888180004A547 /* PZPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4325DC1AF888180004A547 /* PZPullToRefresh.framework */; };
+		6E4325F01AF888180004A547 /* PZPullToRefreshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E4325EF1AF888180004A547 /* PZPullToRefreshTests.swift */; };
+		6E4325F31AF888180004A547 /* PZPullToRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4325DC1AF888180004A547 /* PZPullToRefresh.framework */; };
+		6E4325F41AF888180004A547 /* PZPullToRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4325DC1AF888180004A547 /* PZPullToRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6E4325FC1AF888210004A547 /* PZPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E65550A1ABCAEDC0038D0C7 /* PZPullToRefreshView.swift */; };
 		6E6554EB1ABCAE880038D0C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6554EA1ABCAE880038D0C7 /* AppDelegate.swift */; };
 		6E6554ED1ABCAE880038D0C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6554EC1ABCAE880038D0C7 /* ViewController.swift */; };
 		6E6554F01ABCAE880038D0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6554EE1ABCAE880038D0C7 /* Main.storyboard */; };
@@ -17,6 +23,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		6E4325E81AF888180004A547 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E6554DD1ABCAE880038D0C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E4325DB1AF888180004A547;
+			remoteInfo = PZPullToRefresh;
+		};
+		6E4325EA1AF888180004A547 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E6554DD1ABCAE880038D0C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E6554E41ABCAE880038D0C7;
+			remoteInfo = "PZPullToRefresh-Sample";
+		};
+		6E4325F11AF888180004A547 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6E6554DD1ABCAE880038D0C7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E4325DB1AF888180004A547;
+			remoteInfo = PZPullToRefresh;
+		};
 		6E6554FB1ABCAE880038D0C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6E6554DD1ABCAE880038D0C7 /* Project object */;
@@ -26,7 +53,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6E4325FA1AF888180004A547 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6E4325F41AF888180004A547 /* PZPullToRefresh.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		6E4325DC1AF888180004A547 /* PZPullToRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PZPullToRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4325DF1AF888180004A547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E4325E01AF888180004A547 /* PZPullToRefresh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PZPullToRefresh.h; sourceTree = "<group>"; };
+		6E4325E61AF888180004A547 /* PZPullToRefreshTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PZPullToRefreshTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E4325EE1AF888180004A547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E4325EF1AF888180004A547 /* PZPullToRefreshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZPullToRefreshTests.swift; sourceTree = "<group>"; };
 		6E6554E51ABCAE880038D0C7 /* PZPullToRefresh-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PZPullToRefresh-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E6554E91ABCAE880038D0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6E6554EA1ABCAE880038D0C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,10 +88,26 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6E4325D81AF888180004A547 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4325E31AF888180004A547 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4325E71AF888180004A547 /* PZPullToRefresh.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6E6554E21ABCAE880038D0C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E4325F31AF888180004A547 /* PZPullToRefresh.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,11 +121,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E4325DD1AF888180004A547 /* PZPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				6E4325E01AF888180004A547 /* PZPullToRefresh.h */,
+				6E4325DE1AF888180004A547 /* Supporting Files */,
+			);
+			path = PZPullToRefresh;
+			sourceTree = "<group>";
+		};
+		6E4325DE1AF888180004A547 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E4325DF1AF888180004A547 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6E4325EC1AF888180004A547 /* PZPullToRefreshTests */ = {
+			isa = PBXGroup;
+			children = (
+				6E4325EF1AF888180004A547 /* PZPullToRefreshTests.swift */,
+				6E4325ED1AF888180004A547 /* Supporting Files */,
+			);
+			path = PZPullToRefreshTests;
+			sourceTree = "<group>";
+		};
+		6E4325ED1AF888180004A547 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E4325EE1AF888180004A547 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		6E6554DC1ABCAE880038D0C7 = {
 			isa = PBXGroup;
 			children = (
 				6E6554E71ABCAE880038D0C7 /* PZPullToRefresh-Sample */,
 				6E6554FD1ABCAE880038D0C7 /* PZPullToRefresh-SampleTests */,
+				6E4325DD1AF888180004A547 /* PZPullToRefresh */,
+				6E4325EC1AF888180004A547 /* PZPullToRefreshTests */,
 				6E6554E61ABCAE880038D0C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +171,8 @@
 			children = (
 				6E6554E51ABCAE880038D0C7 /* PZPullToRefresh-Sample.app */,
 				6E6554FA1ABCAE880038D0C7 /* PZPullToRefresh-SampleTests.xctest */,
+				6E4325DC1AF888180004A547 /* PZPullToRefresh.framework */,
+				6E4325E61AF888180004A547 /* PZPullToRefreshTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +226,55 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		6E4325D91AF888180004A547 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4325E11AF888180004A547 /* PZPullToRefresh.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		6E4325DB1AF888180004A547 /* PZPullToRefresh */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E4325F91AF888180004A547 /* Build configuration list for PBXNativeTarget "PZPullToRefresh" */;
+			buildPhases = (
+				6E4325D71AF888180004A547 /* Sources */,
+				6E4325D81AF888180004A547 /* Frameworks */,
+				6E4325D91AF888180004A547 /* Headers */,
+				6E4325DA1AF888180004A547 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PZPullToRefresh;
+			productName = PZPullToRefresh;
+			productReference = 6E4325DC1AF888180004A547 /* PZPullToRefresh.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6E4325E51AF888180004A547 /* PZPullToRefreshTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6E4325FB1AF888180004A547 /* Build configuration list for PBXNativeTarget "PZPullToRefreshTests" */;
+			buildPhases = (
+				6E4325E21AF888180004A547 /* Sources */,
+				6E4325E31AF888180004A547 /* Frameworks */,
+				6E4325E41AF888180004A547 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E4325E91AF888180004A547 /* PBXTargetDependency */,
+				6E4325EB1AF888180004A547 /* PBXTargetDependency */,
+			);
+			name = PZPullToRefreshTests;
+			productName = PZPullToRefreshTests;
+			productReference = 6E4325E61AF888180004A547 /* PZPullToRefreshTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		6E6554E41ABCAE880038D0C7 /* PZPullToRefresh-Sample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E6555041ABCAE880038D0C7 /* Build configuration list for PBXNativeTarget "PZPullToRefresh-Sample" */;
@@ -133,10 +282,12 @@
 				6E6554E11ABCAE880038D0C7 /* Sources */,
 				6E6554E21ABCAE880038D0C7 /* Frameworks */,
 				6E6554E31ABCAE880038D0C7 /* Resources */,
+				6E4325FA1AF888180004A547 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6E4325F21AF888180004A547 /* PBXTargetDependency */,
 			);
 			name = "PZPullToRefresh-Sample";
 			productName = "PZPullToRefresh-Sample";
@@ -170,6 +321,14 @@
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = pixyzehn;
 				TargetAttributes = {
+					6E4325DB1AF888180004A547 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = XP5N783SQH;
+					};
+					6E4325E51AF888180004A547 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 6E6554E41ABCAE880038D0C7;
+					};
 					6E6554E41ABCAE880038D0C7 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = XP5N783SQH;
@@ -195,11 +354,27 @@
 			targets = (
 				6E6554E41ABCAE880038D0C7 /* PZPullToRefresh-Sample */,
 				6E6554F91ABCAE880038D0C7 /* PZPullToRefresh-SampleTests */,
+				6E4325DB1AF888180004A547 /* PZPullToRefresh */,
+				6E4325E51AF888180004A547 /* PZPullToRefreshTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6E4325DA1AF888180004A547 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4325E41AF888180004A547 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6E6554E31ABCAE880038D0C7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +395,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6E4325D71AF888180004A547 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4325FC1AF888210004A547 /* PZPullToRefreshView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4325E21AF888180004A547 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E4325F01AF888180004A547 /* PZPullToRefreshTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6E6554E11ABCAE880038D0C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -241,6 +432,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		6E4325E91AF888180004A547 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E4325DB1AF888180004A547 /* PZPullToRefresh */;
+			targetProxy = 6E4325E81AF888180004A547 /* PBXContainerItemProxy */;
+		};
+		6E4325EB1AF888180004A547 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E6554E41ABCAE880038D0C7 /* PZPullToRefresh-Sample */;
+			targetProxy = 6E4325EA1AF888180004A547 /* PBXContainerItemProxy */;
+		};
+		6E4325F21AF888180004A547 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E4325DB1AF888180004A547 /* PZPullToRefresh */;
+			targetProxy = 6E4325F11AF888180004A547 /* PBXContainerItemProxy */;
+		};
 		6E6554FC1ABCAE880038D0C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6E6554E41ABCAE880038D0C7 /* PZPullToRefresh-Sample */;
@@ -268,6 +474,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6E4325F51AF888180004A547 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PZPullToRefresh/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		6E4325F61AF888180004A547 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = PZPullToRefresh/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6E4325F71AF888180004A547 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PZPullToRefreshTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PZPullToRefresh-Sample.app/PZPullToRefresh-Sample";
+			};
+			name = Debug;
+		};
+		6E4325F81AF888180004A547 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PZPullToRefreshTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PZPullToRefresh-Sample.app/PZPullToRefresh-Sample";
+			};
+			name = Release;
+		};
 		6E6555021ABCAE880038D0C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -404,6 +686,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6E4325F91AF888180004A547 /* Build configuration list for PBXNativeTarget "PZPullToRefresh" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E4325F51AF888180004A547 /* Debug */,
+				6E4325F61AF888180004A547 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6E4325FB1AF888180004A547 /* Build configuration list for PBXNativeTarget "PZPullToRefreshTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6E4325F71AF888180004A547 /* Debug */,
+				6E4325F81AF888180004A547 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		6E6554E01ABCAE880038D0C7 /* Build configuration list for PBXProject "PZPullToRefresh-Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

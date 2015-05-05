@@ -8,6 +8,8 @@ This is the simplest refresh control in Swift.
 
 ##Installation
 
+###Cocoapods
+
 The easiest way to get started is to use [CocoaPods](http://cocoapods.org/). Add the following line to your Podfile:
 
 ```ruby
@@ -22,6 +24,33 @@ Then, run the following command:
 ```ruby
 pod install
 ```
+
+###Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate PZPullToRefresh into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "pixyzehn/PZPullToRefresh"
+```
+
+Run `carthage update`.
+
+```bash
+$ carthage update
+```
+
+###Other
+
+Add the PZPullToRefresh (including PZPullToRefreshView.swift) folder into your project.
 
 In the rest of the details, refer to PZPullToRefresh-Sample project.
 

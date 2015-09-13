@@ -70,7 +70,7 @@ public class PZPullToRefreshView: UIView {
         }
     }
     
-    public func rotateArrowImage(#angle: CGFloat) {
+    public func rotateArrowImage(angle angle: CGFloat) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(flipAnimatioDutation)
         arrowImage?.transform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
@@ -126,14 +126,14 @@ public class PZPullToRefreshView: UIView {
         state = .Normal
     }
 
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
     public func refreshLastUpdatedDate() {
         if isShowUpdatedTime {
-            if let update = delegate?.respondsToSelector("pullToRefreshLastUpdated:") {
-                var date = delegate?.pullToRefreshLastUpdated!(self)
+            if delegate?.respondsToSelector("pullToRefreshLastUpdated:") != nil {
+                let date = delegate?.pullToRefreshLastUpdated!(self)
                 let formatter = NSDateFormatter()
                 formatter.AMSymbol = "AM"
                 formatter.PMSymbol = "PM"
@@ -156,7 +156,7 @@ public class PZPullToRefreshView: UIView {
             scrollView.contentInset = UIEdgeInsetsMake(offset, 0.0, 0.0, 0.0)
             UIView.commitAnimations()
         } else if scrollView.dragging {
-            var loading: Bool = false
+            let loading: Bool = false
             if state == .Pulling && scrollView.contentOffset.y > -thresholdValue && scrollView.contentOffset.y < 0.0 && !loading {
                 state = .Normal
             } else if state == .Normal && scrollView.contentOffset.y < -thresholdValue && !loading {
@@ -166,10 +166,10 @@ public class PZPullToRefreshView: UIView {
     }
     
     public func refreshScrollViewDidEndDragging(scrollView: UIScrollView) {
-        var loading: Bool = false
+        let loading: Bool = false
         if (scrollView.contentOffset.y <= -thresholdValue && !loading) {
             state = .Loading
-            if let load = delegate?.respondsToSelector("pullToRefreshDidTrigger:") {
+            if delegate?.respondsToSelector("pullToRefreshDidTrigger:") != nil {
                 delegate?.pullToRefreshDidTrigger(self)
             }
         }

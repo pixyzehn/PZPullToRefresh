@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.edgesForExtendedLayout = UIRectEdge.None
         
         if refreshHeaderView == nil {
-            var view = PZPullToRefreshView(frame: CGRectMake(0, 0 - tableView.bounds.size.height, tableView.bounds.size.width, tableView.bounds.size.height))
+            let view = PZPullToRefreshView(frame: CGRectMake(0, 0 - tableView.bounds.size.height, tableView.bounds.size.width, tableView.bounds.size.height))
             view.delegate = self
             self.tableView.addSubview(view)
             refreshHeaderView = view
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let delay = 3.0 * Double(NSEC_PER_SEC)
         let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue(), {
-            println("Complete loading!")
+            print("Complete loading!")
             self.refreshHeaderView?.isLoading = false
             self.refreshHeaderView?.refreshScrollViewDataSourceDidFinishedLoading(self.tableView)
         })

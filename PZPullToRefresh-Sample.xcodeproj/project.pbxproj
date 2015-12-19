@@ -17,7 +17,6 @@
 		6E6554ED1ABCAE880038D0C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6554EC1ABCAE880038D0C7 /* ViewController.swift */; };
 		6E6554F01ABCAE880038D0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6554EE1ABCAE880038D0C7 /* Main.storyboard */; };
 		6E6554F21ABCAE880038D0C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6554F11ABCAE880038D0C7 /* Images.xcassets */; };
-		6E6554F51ABCAE880038D0C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E6554F31ABCAE880038D0C7 /* LaunchScreen.xib */; };
 		6E65550B1ABCAEDC0038D0C7 /* PZPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E65550A1ABCAEDC0038D0C7 /* PZPullToRefreshView.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		6E6554EC1ABCAE880038D0C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6E6554EF1ABCAE880038D0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E6554F11ABCAE880038D0C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6E6554F41ABCAE880038D0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6E65550A1ABCAEDC0038D0C7 /* PZPullToRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PZPullToRefreshView.swift; path = ../PZPullToRefresh/PZPullToRefreshView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -165,7 +163,6 @@
 				6E6554EC1ABCAE880038D0C7 /* ViewController.swift */,
 				6E6554EE1ABCAE880038D0C7 /* Main.storyboard */,
 				6E6554F11ABCAE880038D0C7 /* Images.xcassets */,
-				6E6554F31ABCAE880038D0C7 /* LaunchScreen.xib */,
 				6E6554E81ABCAE880038D0C7 /* Supporting Files */,
 			);
 			path = "PZPullToRefresh-Sample";
@@ -322,7 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E6554F01ABCAE880038D0C7 /* Main.storyboard in Resources */,
-				6E6554F51ABCAE880038D0C7 /* LaunchScreen.xib in Resources */,
 				6E6554F21ABCAE880038D0C7 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,14 +379,6 @@
 				6E6554EF1ABCAE880038D0C7 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6E6554F31ABCAE880038D0C7 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E6554F41ABCAE880038D0C7 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

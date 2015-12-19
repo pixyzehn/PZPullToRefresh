@@ -10,7 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PZPullToRefreshDelegate {
     
-    var items = ["Evernote", "Dropbox", "Sketch", "Xcode", "Pocket", "Tweetbot", "Reeder", "LINE", "Slack", "Spotify", "Sunrise", "Atom", "Dash", "Reveal", "Alternote", "iTerm"]
+    var items = [
+        "Evernote", "Dropbox", "Sketch", "Xcode", "Pocket",
+        "Tweetbot", "Reeder", "LINE", "Slack", "Spotify",
+        "Sunrise", "Atom", "Dash", "Reveal", "Alternote", "iTerm"
+    ]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,17 +23,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
-        
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        
-        self.edgesForExtendedLayout = UIRectEdge.None
-        
+        navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+
         if refreshHeaderView == nil {
             let view = PZPullToRefreshView(frame: CGRectMake(0, 0 - tableView.bounds.size.height, tableView.bounds.size.width, tableView.bounds.size.height))
             view.delegate = self
-            self.tableView.addSubview(view)
+            tableView.addSubview(view)
             refreshHeaderView = view
         }
     }
@@ -43,7 +42,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
+        let cell: UITableViewCell = UITableViewCell(style: .Subtitle, reuseIdentifier: "Cell")
         cell.textLabel?.text = items[indexPath.row]
         return cell
     }
@@ -72,8 +71,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
 
-    // Optional method
-    
     func pullToRefreshLastUpdated(view: PZPullToRefreshView) -> NSDate {
         return NSDate()
     }

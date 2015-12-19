@@ -17,8 +17,6 @@
 		6E6554ED1ABCAE880038D0C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6554EC1ABCAE880038D0C7 /* ViewController.swift */; };
 		6E6554F01ABCAE880038D0C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E6554EE1ABCAE880038D0C7 /* Main.storyboard */; };
 		6E6554F21ABCAE880038D0C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E6554F11ABCAE880038D0C7 /* Images.xcassets */; };
-		6E6554F51ABCAE880038D0C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E6554F31ABCAE880038D0C7 /* LaunchScreen.xib */; };
-		6E6555011ABCAE880038D0C7 /* PZPullToRefresh_SampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6555001ABCAE880038D0C7 /* PZPullToRefresh_SampleTests.swift */; };
 		6E65550B1ABCAEDC0038D0C7 /* PZPullToRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E65550A1ABCAEDC0038D0C7 /* PZPullToRefreshView.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,13 +41,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 6E4325DB1AF888180004A547;
 			remoteInfo = PZPullToRefresh;
-		};
-		6E6554FB1ABCAE880038D0C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6E6554DD1ABCAE880038D0C7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E6554E41ABCAE880038D0C7;
-			remoteInfo = "PZPullToRefresh-Sample";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -80,10 +71,6 @@
 		6E6554EC1ABCAE880038D0C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6E6554EF1ABCAE880038D0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E6554F11ABCAE880038D0C7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6E6554F41ABCAE880038D0C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6E6554FA1ABCAE880038D0C7 /* PZPullToRefresh-SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PZPullToRefresh-SampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E6554FF1ABCAE880038D0C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6E6555001ABCAE880038D0C7 /* PZPullToRefresh_SampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PZPullToRefresh_SampleTests.swift; sourceTree = "<group>"; };
 		6E65550A1ABCAEDC0038D0C7 /* PZPullToRefreshView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PZPullToRefreshView.swift; path = ../PZPullToRefresh/PZPullToRefreshView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,13 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4325F31AF888180004A547 /* PZPullToRefresh.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E6554F71ABCAE880038D0C7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +139,6 @@
 			isa = PBXGroup;
 			children = (
 				6E6554E71ABCAE880038D0C7 /* PZPullToRefresh-Sample */,
-				6E6554FD1ABCAE880038D0C7 /* PZPullToRefresh-SampleTests */,
 				6E4325DD1AF888180004A547 /* PZPullToRefresh */,
 				6E4325EC1AF888180004A547 /* PZPullToRefreshTests */,
 				6E6554E61ABCAE880038D0C7 /* Products */,
@@ -170,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				6E6554E51ABCAE880038D0C7 /* PZPullToRefresh-Sample.app */,
-				6E6554FA1ABCAE880038D0C7 /* PZPullToRefresh-SampleTests.xctest */,
 				6E4325DC1AF888180004A547 /* PZPullToRefresh.framework */,
 				6E4325E61AF888180004A547 /* PZPullToRefreshTests.xctest */,
 			);
@@ -185,7 +163,6 @@
 				6E6554EC1ABCAE880038D0C7 /* ViewController.swift */,
 				6E6554EE1ABCAE880038D0C7 /* Main.storyboard */,
 				6E6554F11ABCAE880038D0C7 /* Images.xcassets */,
-				6E6554F31ABCAE880038D0C7 /* LaunchScreen.xib */,
 				6E6554E81ABCAE880038D0C7 /* Supporting Files */,
 			);
 			path = "PZPullToRefresh-Sample";
@@ -195,23 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				6E6554E91ABCAE880038D0C7 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6E6554FD1ABCAE880038D0C7 /* PZPullToRefresh-SampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				6E6555001ABCAE880038D0C7 /* PZPullToRefresh_SampleTests.swift */,
-				6E6554FE1ABCAE880038D0C7 /* Supporting Files */,
-			);
-			path = "PZPullToRefresh-SampleTests";
-			sourceTree = "<group>";
-		};
-		6E6554FE1ABCAE880038D0C7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6E6554FF1ABCAE880038D0C7 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -294,24 +254,6 @@
 			productReference = 6E6554E51ABCAE880038D0C7 /* PZPullToRefresh-Sample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E6554F91ABCAE880038D0C7 /* PZPullToRefresh-SampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6E6555071ABCAE880038D0C7 /* Build configuration list for PBXNativeTarget "PZPullToRefresh-SampleTests" */;
-			buildPhases = (
-				6E6554F61ABCAE880038D0C7 /* Sources */,
-				6E6554F71ABCAE880038D0C7 /* Frameworks */,
-				6E6554F81ABCAE880038D0C7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6E6554FC1ABCAE880038D0C7 /* PBXTargetDependency */,
-			);
-			name = "PZPullToRefresh-SampleTests";
-			productName = "PZPullToRefresh-SampleTests";
-			productReference = 6E6554FA1ABCAE880038D0C7 /* PZPullToRefresh-SampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -320,7 +262,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = pixyzehn;
 				TargetAttributes = {
 					6E4325DB1AF888180004A547 = {
@@ -334,10 +276,6 @@
 					6E6554E41ABCAE880038D0C7 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = XP5N783SQH;
-					};
-					6E6554F91ABCAE880038D0C7 = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 6E6554E41ABCAE880038D0C7;
 					};
 				};
 			};
@@ -355,7 +293,6 @@
 			projectRoot = "";
 			targets = (
 				6E6554E41ABCAE880038D0C7 /* PZPullToRefresh-Sample */,
-				6E6554F91ABCAE880038D0C7 /* PZPullToRefresh-SampleTests */,
 				6E4325DB1AF888180004A547 /* PZPullToRefresh */,
 				6E4325E51AF888180004A547 /* PZPullToRefreshTests */,
 			);
@@ -382,15 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E6554F01ABCAE880038D0C7 /* Main.storyboard in Resources */,
-				6E6554F51ABCAE880038D0C7 /* LaunchScreen.xib in Resources */,
 				6E6554F21ABCAE880038D0C7 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6E6554F81ABCAE880038D0C7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,14 +352,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6E6554F61ABCAE880038D0C7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6E6555011ABCAE880038D0C7 /* PZPullToRefresh_SampleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -449,11 +370,6 @@
 			target = 6E4325DB1AF888180004A547 /* PZPullToRefresh */;
 			targetProxy = 6E4325F11AF888180004A547 /* PBXContainerItemProxy */;
 		};
-		6E6554FC1ABCAE880038D0C7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E6554E41ABCAE880038D0C7 /* PZPullToRefresh-Sample */;
-			targetProxy = 6E6554FB1ABCAE880038D0C7 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -463,14 +379,6 @@
 				6E6554EF1ABCAE880038D0C7 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		6E6554F31ABCAE880038D0C7 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6E6554F41ABCAE880038D0C7 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -492,6 +400,7 @@
 				INFOPLIST_FILE = PZPullToRefresh/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,6 +421,7 @@
 				INFOPLIST_FILE = PZPullToRefresh/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -523,16 +433,14 @@
 		6E4325F71AF888180004A547 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = PZPullToRefreshTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PZPullToRefresh-Sample.app/PZPullToRefresh-Sample";
 			};
@@ -541,12 +449,10 @@
 		6E4325F81AF888180004A547 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PZPullToRefreshTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PZPullToRefresh-Sample.app/PZPullToRefresh-Sample";
 			};
@@ -654,36 +560,6 @@
 			};
 			name = Release;
 		};
-		6E6555081ABCAE880038D0C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "PZPullToRefresh-SampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PZPullToRefresh-Sample.app/PZPullToRefresh-Sample";
-			};
-			name = Debug;
-		};
-		6E6555091ABCAE880038D0C7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "PZPullToRefresh-SampleTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "pixyzehn.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PZPullToRefresh-Sample.app/PZPullToRefresh-Sample";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -694,6 +570,7 @@
 				6E4325F61AF888180004A547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E4325FB1AF888180004A547 /* Build configuration list for PBXNativeTarget "PZPullToRefreshTests" */ = {
 			isa = XCConfigurationList;
@@ -702,6 +579,7 @@
 				6E4325F81AF888180004A547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6E6554E01ABCAE880038D0C7 /* Build configuration list for PBXProject "PZPullToRefresh-Sample" */ = {
 			isa = XCConfigurationList;
@@ -717,15 +595,6 @@
 			buildConfigurations = (
 				6E6555051ABCAE880038D0C7 /* Debug */,
 				6E6555061ABCAE880038D0C7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6E6555071ABCAE880038D0C7 /* Build configuration list for PBXNativeTarget "PZPullToRefresh-SampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6E6555081ABCAE880038D0C7 /* Debug */,
-				6E6555091ABCAE880038D0C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

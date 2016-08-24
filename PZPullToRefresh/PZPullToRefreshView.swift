@@ -80,6 +80,7 @@ public final class PZPullToRefreshView: UIView {
     public var arrowImage: CALayer?
     public var activityView: UIActivityIndicatorView?
     public var delegate: PZPullToRefreshDelegate?
+    public var lastUpdatedLabelCustomFormatter: ( (date:NSDate)->String )?
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
@@ -132,11 +133,17 @@ public final class PZPullToRefreshView: UIView {
     public func refreshLastUpdatedDate() {
         if isShowUpdatedTime {
             if let date = delegate?.pullToRefreshLastUpdated(self) {
-                let formatter = NSDateFormatter()
-                formatter.AMSymbol = "AM"
-                formatter.PMSymbol = "PM"
-                formatter.dateFormat = "yyyy/MM/dd/ hh:mm:a"
-                lastUpdatedLabel?.text = "Last Updated: \(formatter.stringFromDate(date))"
+                var lastUpdateText:String
+                if (self.lastUpdatedLabelCustomFormatter != nil){
+                    lastUpdateText = self.lastUpdatedLabelCustomFormatter!(date: date)
+                }else{
+                    let formatter = NSDateFormatter()
+                    formatter.AMSymbol = "AM"
+                    formatter.PMSymbol = "PM"
+                    formatter.dateFormat = "yyyy/MM/dd/ hh:mm:a"
+                    lastUpdateText = "Last Updated: \(formatter.stringFromDate(date))"
+                }
+                lastUpdatedLabel?.text = lastUpdateText
                 let userDefaults = NSUserDefaults.standardUserDefaults()
                 userDefaults.setObject(lastUpdatedLabel?.text, forKey: lastUpdatedKey)
                 userDefaults.synchronize()

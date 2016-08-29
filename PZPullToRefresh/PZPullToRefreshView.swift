@@ -134,8 +134,8 @@ public final class PZPullToRefreshView: UIView {
         if isShowUpdatedTime {
             if let date = delegate?.pullToRefreshLastUpdated(self) {
                 var lastUpdateText:String
-                if (self.lastUpdatedLabelCustomFormatter != nil){
-                    lastUpdateText = self.lastUpdatedLabelCustomFormatter!(date: date)
+                if let customFormatter = self.lastUpdatedLabelCustomFormatter {
+                    lastUpdateText = customFormatter(date: date)
                 }else{
                     let formatter = NSDateFormatter()
                     formatter.AMSymbol = "AM"

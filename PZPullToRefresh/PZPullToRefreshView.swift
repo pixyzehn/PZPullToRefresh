@@ -23,7 +23,7 @@ public final class PZPullToRefreshView: UIView {
 
     public var statusTextColor = UIColor.white
     public var timeTextColor = UIColor(red: 0.95, green: 0.82, blue: 0.79, alpha: 1)
-    public var bgColor = UIColor(red: 0.82, green: 0.44, blue: 0.39, alpha: 1)
+    public var bgColor = UIColor(red: 0.93, green: 0.46, blue: 0.07, alpha: 1.0)
 
     public var flipAnimatioDutation: CFTimeInterval = 0.18
     public var thresholdValue: CGFloat = 60.0

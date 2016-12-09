@@ -110,14 +110,7 @@ public final class PZPullToRefreshView: UIView {
         label2.textAlignment = .Center
         statusLabel = label2
         addSubview(label2)
-        
-        let caLayer = CALayer()
-        caLayer.frame = CGRectMake(25.0, frame.size.height - 40.0, 15.0, 25.0)
-        caLayer.contentsGravity = kCAGravityResizeAspect
-        caLayer.contents = UIImage(named: "whiteArrow")?.CGImage
-        arrowImage = caLayer
-        layer.addSublayer(caLayer)
-        
+                
         let view = UIActivityIndicatorView(activityIndicatorStyle: .Gray)
         view.frame = CGRectMake(25.0, frame.size.height - 38.0, 20.0, 20.0)
         activityView = view
@@ -128,6 +121,15 @@ public final class PZPullToRefreshView: UIView {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    public func setArrowUIImage(arrowUIImage: UIImage) {
+        let layer: CALayer = CALayer()
+        layer.frame = CGRectMake(25.0, frame.size.height - 40.0, 15.0, 25.0)
+        layer.contentsGravity = kCAGravityResizeAspect
+        layer.contents = arrowUIImage.CGImage
+        self.layer.addSublayer(layer)
+        arrowImage = layer
     }
     
     public func refreshLastUpdatedDate() {

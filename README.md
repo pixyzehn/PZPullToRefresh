@@ -1,14 +1,16 @@
-#PZPullToRefresh
+**Notice: PZPullToRefresh is no longer being maintained/updated.**
+
+# PZPullToRefresh
 
 This is the simplest refresh control in Swift.
 
-##Screenshot
+## Screenshot
 
 ![PZPullToRefresh](https://raw.githubusercontent.com/pixyzehn/PZPullToRefresh/master/Assets/PZPullToRefresh.gif)
 
-##Installation
+## Installation
 
-###Cocoapods
+### Cocoapods
 
 The easiest way to get started is to use [CocoaPods](http://cocoapods.org/). Add the following line to your Podfile:
 
@@ -25,7 +27,7 @@ Then, run the following command:
 pod install
 ```
 
-###Carthage
+### Carthage
 
 [Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that automates the process of adding frameworks to your Cocoa application.
 
@@ -48,7 +50,7 @@ Run `carthage update`.
 $ carthage update
 ```
 
-###Other
+### Other
 
 Add the PZPullToRefresh (including PZPullToRefreshView.swift) folder into your project.
 

@@ -23,56 +23,56 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.barTintColor = UIColor.whiteColor()
+        navigationController?.navigationBar.barTintColor = UIColor.white
 
         if refreshHeaderView == nil {
-            let view = PZPullToRefreshView(frame: CGRectMake(0, 0 - tableView.bounds.size.height, tableView.bounds.size.width, tableView.bounds.size.height))
+            let view = PZPullToRefreshView(frame: CGRect(x: 0, y: 0 - tableView.bounds.size.height, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
             view.delegate = self
             tableView.addSubview(view)
             refreshHeaderView = view
         }
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = UITableViewCell(style: .Subtitle, reuseIdentifier: "Cell")
-        cell.textLabel?.text = items[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
+        cell.textLabel?.text = items[(indexPath as NSIndexPath).row]
         return cell
     }
     
     // MARK:UIScrollViewDelegate
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         refreshHeaderView?.refreshScrollViewDidScroll(scrollView)
     }
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         refreshHeaderView?.refreshScrollViewDidEndDragging(scrollView)
     }
     
     // MARK:PZPullToRefreshDelegate
 
-    func pullToRefreshDidTrigger(view: PZPullToRefreshView) -> () {
+    func pullToRefreshDidTrigger(_ view: PZPullToRefreshView) -> () {
         refreshHeaderView?.isLoading = true
         
         let delay = 3.0 * Double(NSEC_PER_SEC)
-        let time  = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-        dispatch_after(time, dispatch_get_main_queue(), {
+        let time  = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+        DispatchQueue.main.asyncAfter(deadline: time, execute: {
             print("Complete loading!")
             self.refreshHeaderView?.isLoading = false
             self.refreshHeaderView?.refreshScrollViewDataSourceDidFinishedLoading(self.tableView)
         })
     }
 
-    func pullToRefreshLastUpdated(view: PZPullToRefreshView) -> NSDate {
-        return NSDate()
+    func pullToRefreshLastUpdated(_ view: PZPullToRefreshView) -> Date {
+        return Date()
     }
     
 }
